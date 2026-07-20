@@ -9,7 +9,11 @@
 // }, 2000);
 
 // const server = http.createServer((req, res) => {
-//   res.end(`Ramdom Number : ${randomNumber}`);
+//   res.end(`<html>
+//                 <body>
+//                      <h1>Ramdom Number : ${randomNumber}</h1>
+//                 </body>
+//             </html>`);
 // });
 
 // server.listen(3000, () => {
