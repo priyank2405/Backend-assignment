@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submitted Data</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-green-300 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg">
+      <div class="text-center mb-6">
+        <div class="text-5xl">🎉</div>
+        <h1 class="text-3xl font-bold text-green-600 mt-2">
+          Form Submitted Successfully
+        </h1>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-semibold text-gray-600">Full Name</span>
+          <span><%= fullName %></span>
+        </div>
+
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-semibold text-gray-600">Email</span>
+          <span><%= email %></span>
+        </div>
+
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-semibold text-gray-600">Age</span>
+          <span><%= age %></span>
+        </div>
+
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-semibold text-gray-600">Favorite Color</span>
+          <span class="font-medium text-indigo-600">
+            <%= favoriteColor %>
+          </span>
+        </div>
+      </div>
+
+      <a
+        href="/"
+        class="block mt-8 text-center bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+      >
+        Back to Form
+      </a>
+    </div>
+  </body>
+</html>
