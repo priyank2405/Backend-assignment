@@ -34,6 +34,10 @@
                     <div><%= users[i].email %></div>
                  </div>
                  <div class="flex gap-4 item-center">
+                    <form action="/edit" method="post" class="inline">
+                    <input type="hidden" name="userId" value="<%= i %>">
+                    <button type="submit">Edit</button>
+                  </form>
                     <form action="/delete" method="post" class="inline">
                     <input type="hidden" name="userId" value="<%= i %>">
                     <button type="submit">Delete</button>
