@@ -18,7 +18,7 @@ app.get('/api/users', (req,res) =>{
     return res.json(users);
 })
 app.get('/api/users/:id', (req,res) =>{
-    let userId = Number(req.params.id)
+    let userId = Number(req.params.id);
     let user = users.find((user)=> user.id === userId);
     return res.json(user);
 })
