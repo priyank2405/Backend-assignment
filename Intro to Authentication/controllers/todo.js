@@ -1,7 +1,7 @@
 const Todo = require("../models/todo");
 
 async function getTodos(req, res) {
-  let todos = await Todo.find({ isCompleted: false, createdBy:req.user._id });
+  let todos = await Todo.find({ isCompleted: false, createdBy: req.user._id });
   res.render("index", { todos: todos });
 }
 
@@ -21,5 +21,21 @@ async function markComplete(req, res) {
   res.redirect("/todo");
 }
 
+async function getCompletedTodos(req, res) {
+  let todos = await Todo.find({
+    isCompleted: true,
+    createdBy: req.user._id,
+  });
+  res.render("completed", { todos: todos });
+}
 
-module.exports = {getTodos, createTodos, markComplete}
+async function deleteTodos(req, res) {
+  await Todo.findByIdAndDelete(req.params.id);
+
+  if (req.query.from === "completed") {
+    return res.redirect("/todo/complete");
+  }
+  res.redirect("/todo");
+}
+
+module.exports = { getTodos, createTodos, markComplete, getCompletedTodos, deleteTodos };

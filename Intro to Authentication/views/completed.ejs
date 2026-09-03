@@ -14,7 +14,7 @@
   <div class="w-full max-w-7xl mx-auto px-6">
 
     <div class="flex justify-between gap-8">
-      <a href="/" class="text-3xl font-bold text-center text-gray-800 mb-8">
+      <a href="/todo" class="text-3xl font-bold text-center text-gray-800 mb-8">
       My Todo App
       </a>
     <a href="todo/complete" class="text-3xl font-bold text-center text-gray-800 mb-8">
@@ -36,10 +36,7 @@
             <%= todo.title %>
           </h3>
          <div class="flex items-center gap-4">
-            <form action="/todo/<%= todo.id %>/complete" method="post">
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-icon lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></button>
-          </form>
-          <form action="/todo/<%= todo.id %>/delete" method="post">
+          <form action="/todo/<%= todo.id %>/delete?from=completed" method="post">
             <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
           </form>
          </div>
@@ -54,28 +51,7 @@
     </div> 
 
 
-    
-    <div class="bg-white rounded-xl shadow-md p-4 w-[700px] mx-auto">
 
-      <form action="/todo" method="post" class="flex gap-3">
-
-        <input
-          type="text"
-          name="title"
-          placeholder="Enter your task..."
-          class="flex-1 border border-gray-300 rounded-lg px-4 py-2
-                 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-
-        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white
-                 font-semibold px-5 py-2 rounded-lg
-                 transition duration-200">
-          Add Task
-        </button>
-
-      </form>
-
-    </div>
 
   </div>
 
