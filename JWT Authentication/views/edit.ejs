@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+<body>
+     <h2>
+        You can edit your product here
+     </h2>
+
+     <form action="/shop/<%= product.id %>/edit" method="post">
+        <input type="text" value="<%= product.image %>"  name="image" placeholder="Enter the image URL">
+        <input type="text" value="<%= product.name %>" name="name" placeholder="Enter product name">
+        <input type="text" value="<%= product.description %>" name="description" placeholder="Enter product descr..">
+        <input type="number" value="<%= product.price %>" name="price" placeholder="Enter product price">
+
+        <button type="submit">Edit product</button>
+     </form>
+
+     <div>
+        <a href="/shop">Back to shop</a>
+     </div>
+</body>
+</html>

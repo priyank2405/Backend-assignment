@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+<body>
+     <h2>
+        Welcome to the eCommerce Website
+     </h2>
+
+     <div>
+        <% products.forEach( product => {%>
+           
+           <img src="<%= product.image %>" alt="<%= product.image %>" width="200">
+           <h3> <%= product.name %> </h3>
+           <p> <%= product.description %> </p>
+           <p>Price: $<%= product.price %></p>
+
+           <form action="/shop/<%= product.id %>/edit">
+            <button type="submit">Edit</button>
+           </form>
+           <form action="/shop/<%= product.id %>/delete">
+            <button type="submit">delete</button>
+           </form>
+
+            <% }) %>
+
+     </div>
+
+     <form action="/shop" method="post">
+        <input type="text" name="image" placeholder="Enter the image URL">
+        <input type="text" name="name" placeholder="Enter product name">
+        <input type="text" name="description" placeholder="Enter product descr..">
+        <input type="number" name="price" placeholder="Enter product price">
+
+        <button type="submit">Add product</button>
+     </form>
+</body>
+</html>
