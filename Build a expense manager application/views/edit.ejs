@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my app</title>
+</head>
+<body>
+    <div>
+        <h2>Edit  your expense</h2>
+    </div>
+   
+    <div>
+        <form action="/app/<%= expense.id %>/edit" method="post">
+          <input type="text" value="<%= expense.title %>" name="title" placeholder="Enter title">
+          <input type="number" value="<%= expense.amount %>" name="amount" placeholder="Enter the amount">
+          <input type="text" value="<%= expense.category %>" name="category" placeholder="Enter the category">
+          <input type="date" value="<%= expense.date.toISOString().split('T')[0] %>" name="date" placeholder="Enter the date">
+
+          <button type="submit">Edit expense</button>
+        </form>
+    </div>
+</body>
+</html>
